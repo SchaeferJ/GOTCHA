@@ -14,6 +14,7 @@ The Dataset generator is a modified version of Yasir M. Türk's [Simple PHP CAPT
 * PHP 7
 * PHP GD2
 * At least one font placed in the "fonts" directory.
+
 If the requirements are not satisfied, you may install PHP as follows (Debian/Ubuntu);
 ```bash
 $ sudo apt-get install php
