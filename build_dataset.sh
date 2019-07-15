@@ -3,12 +3,14 @@
 CREATE_EVAL=false
 
 # Check if PHP is installed
+# Adapted from the following StackOverflow response: https://stackoverflow.com/a/26759734
 if ! [ -x "$(command -v php)" ]; then
   echo 'Error: PHP not found. Please install an up-to-date version of php.' >&2
   exit 1
 fi
 
 
+# Thanks to https://pretzelhands.com/posts/command-line-flags
 for arg in "$@"
 do
     case $arg in
