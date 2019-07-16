@@ -1,9 +1,12 @@
 # GOTCHA
-## A neural-network-based method for solving CAPTCHAs
+## A tesseract-based method for solving CAPTCHAs
 
-Once this project is complete, it will feature a method for solving simple CAPTCHAs using neural networks. This project consist of two parts:
+GOTCHA is a python module intended to provide a way for handling [CAPTCHAs](https://en.wikipedia.org/wiki/CAPTCHA) in automated testing. GOTCHA accepts images represented as numpy arrays and returns a character string with its guess. GOTCHA is not meant to be used for bypassing any actual security measures - This is why it will only work with extremely simple captchas such as _Simple PHP CAPTCHA_ or the _Really simple CAPTCHA plugin_ for WordPress. 
+
+Once this project is complete, it will feature a method for solving simple CAPTCHAs using the tesseract OCR engine. This project consists of three parts:
 - [x] A PHP-Script generating ground truth
-- [ ] A neural network
+- [x] A jupyter notebook containing a description of the methodology and the evaluation
+- [ ] A python script that can be imported as a module
 
 **NOTE: This is an academic proof-of-concept project. It is NOT meant to be used in productive einvironments of any kind. In particular, the code should not be used to circumvent any measures protecting against Spam, DDOS-Attacks or unauthorized access!**
 
@@ -39,9 +42,21 @@ Arguments:
 
 Example shell script generating the datasets used for the project. Callable via CLI:
 ```bash
-$ bash ./build_dataset.sh -n=1000 -s=80 -v
+$ bash ./build_dataset.sh -n=1000
 ```
 Arguments:
 * -n:   Total size of dataset to generate
-* -s:   Size of training set (a value of 80 will result in 80% training and 20% test data)
-* -v:   If set, the script produces an extra validation set the size of the test set
+
+## Evaluation
+
+**GOTCHA_concept.ipynb**
+
+This Jupyter notebook includes the entire code of the project and includes additional documentation, as well as evaluation on the ground truth.
+
+**Results**
+With an accuracy of 66% GOTCHA significantly outperforms the random baseline - A six digit CAPTCHA corresponds to a total of 56,800,235,584 different combinations and is essentially unguessable.
+
+| Dataset                      | Accuracy    |
+|------------------------------|-------------|
+| Simple PHP CAPTCHA           | 0.66        |
+| Really Simple CAPTCHA Plugin | tbd         |
