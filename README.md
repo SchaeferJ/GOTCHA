@@ -6,11 +6,43 @@ GOTCHA is a python module intended to provide a way for handling [CAPTCHAs](http
 Once this project is complete, it will feature a method for solving simple CAPTCHAs using the tesseract OCR engine. This project consists of three parts:
 - [x] A PHP-Script generating ground truth
 - [x] A jupyter notebook containing a description of the methodology and the evaluation
-- [ ] A python script that can be imported as a module
+- [x] A python script for CLI that can also be used as a module
 
-**NOTE: This is an academic proof-of-concept project. It is NOT meant to be used in productive einvironments of any kind. In particular, the code should not be used to circumvent any measures protecting against Spam, DDOS-Attacks or unauthorized access!**
+## Use
+**Python**
 
-## Dataset generator
+When imported as a python module, caoptcha_solver.py provides the function solve_captcha() that inputs a CAPTCHA-image and returns a guess of the solution:
+```python
+solve_captcha(image, deskew=True, pagesegmode=11, verbose=False):
+    """
+    Receives a CAPTCHA as input, processes it and returns a string with the guess for the solution.
+    
+    :praram image:      The CAPTCHA represented as ndarray (via cv2.imread)
+    :param deskew:      boolean, whether the image schould be deskewed
+    :param pagesegmode: int 0-13, page segmentation mode for tesseract
+    :param verbose:     boolean, if True, individual steps are being shown
+    :return:            string, the CAPTCHA solution
+    """
+```
+
+**Command line**
+
+```
+$ python3 captcha_solver.py ./captcha.png
+
+positional arguments:
+  img_path              Input file
+
+optional arguments:
+  -h, --help            Show this help message and exit
+  --deskew              Should the image be deskewed? (default: True)
+  --pagesegmode         Page segmentation mode for tesseract (default: 11)
+  --verbose             Show intermediate steps? (default: False)
+
+```
+
+## Evalutation
+### Dataset generator
 The Dataset generator is a modified version of Yasir M. Türk's [Simple PHP CAPTCHA](https://github.com/yasirmturk/simple-php-captcha), which has been kindly released under the MIT license.
 
 **Requirements:**
@@ -47,13 +79,13 @@ $ bash ./build_dataset.sh -n=1000
 Arguments:
 * -n:   Total size of dataset to generate
 
-## Evaluation
+### Evaluation script
 
 **GOTCHA_concept.ipynb**
 
 This Jupyter notebook includes the entire code of the project and includes additional documentation, as well as evaluation on the ground truth.
 
-**Results**
+### Results
 With an accuracy of 66% GOTCHA significantly outperforms the random baseline - A six digit CAPTCHA corresponds to a total of 56,800,235,584 different combinations and is essentially unguessable.
 
 | Dataset                      | Accuracy    |
