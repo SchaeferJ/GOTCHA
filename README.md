@@ -97,9 +97,11 @@ Arguments:
 This Jupyter notebook includes the entire code of the project and includes additional documentation, as well as evaluation on the ground truth.
 
 ### Results
-With an accuracy of 66% GOTCHA significantly outperforms the random baseline - A six digit CAPTCHA corresponds to a total of 56,800,235,584 different combinations and is essentially unguessable.
+The following results have been obtained by analyzing 1.000 CAPTCHAs per dataset using default settings.
+
+
 
 | Dataset                      | Accuracy    |
 |------------------------------|-------------|
-| Simple PHP CAPTCHA           | 0.66        |
+| Simple PHP CAPTCHA           | 0.658       |
 | Really Simple CAPTCHA Plugin | tbd         |
