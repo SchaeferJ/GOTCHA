@@ -9,6 +9,17 @@ Once this project is complete, it will feature a method for solving simple CAPTC
 - [x] A python script for CLI that can also be used as a module
 
 ## Use
+**Requirements**
+
+A working installation of the tesseract ocr engine. To install on Debian/Ubuntu:
+```bash
+$ sudo apt-get install tesseract-ocr
+```
+The Python modules listed in requirements.txt. To install them run:
+
+```bash
+$ pip3 install -r requirements.txt
+```
 **Python**
 
 When imported as a python module, captcha_solver.py provides the function solve_captcha() that inputs a CAPTCHA-image and returns a guess of the solution:
