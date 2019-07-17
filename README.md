@@ -97,8 +97,21 @@ Arguments:
 This Jupyter notebook includes the entire code of the project and includes additional documentation, as well as evaluation on the ground truth.
 
 ### Results
-The following results have been obtained by analyzing 1.000 CAPTCHAs per dataset using default settings.
+The following results have been obtained by analyzing 1.000 CAPTCHAs of the following three CAPTCHA-Types:
 
+**Simple PHP CAPTCHA**
+
+![simple php](https://raw.githubusercontent.com/SchaeferJ/GOTCHA/master/examples/t4VMUK.png)
+
+**Really Simple CAPTCHA Plugin**
+
+![really simple](https://raw.githubusercontent.com/SchaeferJ/GOTCHA/master/examples/KKM6.png)
+
+**Kaggle CAPTCHA Dataset**
+
+[Download here](https://www.kaggle.com/fournierp/captcha-version-2-images)
+
+![kaggle](https://raw.githubusercontent.com/SchaeferJ/GOTCHA/master/examples/nbwpn.png)
 
 
 | Dataset                      | Accuracy    |
