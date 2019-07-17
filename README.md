@@ -1,7 +1,7 @@
 # GOTCHA
 ## A tesseract-based method for solving CAPTCHAs
 
-GOTCHA is a python module intended to provide a way for handling [CAPTCHAs](https://en.wikipedia.org/wiki/CAPTCHA) in automated testing. GOTCHA accepts images represented as numpy arrays and returns a character string with its guess. GOTCHA is not meant to be used for bypassing any actual security measures - This is why it will only work with extremely simple captchas such as _Simple PHP CAPTCHA_ or the _Really simple CAPTCHA plugin_ for WordPress. 
+GOTCHA is a python module intended to provide a way for handling [CAPTCHAs](https://en.wikipedia.org/wiki/CAPTCHA) in automated testing. GOTCHA accepts images represented as numpy arrays and returns a character string with its guess. GOTCHA is not meant to be used for bypassing any actual security measures - This is why it will only work with extremely simple CAPTCHAs such as _Simple PHP CAPTCHA_ or the _Really simple CAPTCHA plugin_ for WordPress. 
 
 Once this project is complete, it will feature a method for solving simple CAPTCHAs using the tesseract OCR engine. This project consists of three parts:
 - [x] A PHP-Script generating ground truth
@@ -11,7 +11,7 @@ Once this project is complete, it will feature a method for solving simple CAPTC
 ## Use
 **Python**
 
-When imported as a python module, caoptcha_solver.py provides the function solve_captcha() that inputs a CAPTCHA-image and returns a guess of the solution:
+When imported as a python module, captcha_solver.py provides the function solve_captcha() that inputs a CAPTCHA-image and returns a guess of the solution:
 ```python
 solve_captcha(image, deskew=True, pagesegmode=11, verbose=False):
     """
