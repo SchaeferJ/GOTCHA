@@ -1,4 +1,4 @@
 numpy==1.16.4
 pytesseract==0.2.7
-scipy==1.2.1
+scipy==1.10.0
 opencv-python
